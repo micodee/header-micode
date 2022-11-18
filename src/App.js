@@ -1,10 +1,12 @@
-import React from 'react'
-import './App.css';
+import React from "react";
+import Header1 from "./header-collect/header1/Header1";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div className="App">
+      <Header1 />
+    </div>
+  );
+};
 
-export default App
+export default App;

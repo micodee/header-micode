@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital@0;1&family=Rubik:ital,wght@0,800;1,800&display=swap");
+
+@mixin karla {
+  font-family: "Karla", sans-serif;
+}
+@mixin rubik {
+  font-family: "Rubik", sans-serif;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$primary-color: #161616;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @include karla();
+  color: white;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  @include flex-between();
+  background: $primary-color;
+
+  .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1b4dff;
+    clip-path: circle(70% at right -20%);
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 100px;
+  @include flex-between();
+
+  .logo {
+    position: relative;
+    max-width: 150px;
+  }
+
+  .navbar {
+    position: relative;
+    display: flex;
+
+    li {
+      list-style: none;
+
+      a {
+        display: inline-block;
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  @include flex-between();
+
+  .textBox {
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+
+    h2 {
+      color: white;
+      font-size: 3em;
+      margin-bottom: 10px;
+      line-height: 1.4em;
+      @include rubik();
+    }
+
+    p {
+      color: white;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 20px;
+      text-decoration: none;
+      background: blue;
+      border-radius: 40px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.socials {
+  position: absolute;
+  bottom: 40px;
+  left: 100px;
+  @include flex-center();
+
+  li {
+    list-style: none;
+    margin-left: 10px;
+    background: #333;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+
+    &:hover:nth-child(1) {
+      background: #1b4dff;
+      transform: translateY(-15px);
+    }
+    &:hover:nth-child(2) {
+      background: red;
+      transform: translateY(-15px);
+    }
+    &:hover:nth-child(3) {
+      background: #222;
+      transform: translateY(-15px);
+    }
+  }
+
+  a {
+    width: 50px;
+    height: 50px;
+    @include flex-center();
+  }
+}
